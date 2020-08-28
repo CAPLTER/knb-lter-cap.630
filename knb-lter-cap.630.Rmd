@@ -1,0 +1,406 @@
+---
+title: "capeml template"
+author: "information manager"
+date: Sys.Date()
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# libraries
+
+```{r libraries}
+library(EML)
+library(tidyverse)
+library(capeml)
+library(gioseml)
+library(yaml)
+library(readxl)
+```
+
+# import data from excel
+
+```{r import-excel, eval=TRUE}
+
+ttl_water_quality <- read_excel(
+  "data/TTL data summary_for STEVAN-Aug2020.xlsx",
+  skip = 1,
+  guess_max = 700) %>%
+select(-contains("monsoon"))
+
+# remove empty cols
+not_all_na <- function(x) {!all(is.na(x))}
+
+ttl_water_quality <- ttl_water_quality %>%
+  select_if(not_all_na)
+
+```
+
+# extract field notes
+
+```{r field-notes, eval=TRUE}
+
+field_notes <- ttl_water_quality %>%
+  select(
+    sampling_date = date,
+    field_notes = `field notes`
+    ) %>%
+mutate(sampling_date = as.Date(sampling_date)) %>%
+filter(
+  !is.na(sampling_date),
+  !is.na(field_notes)
+  ) %>%
+# fix erroneous date
+mutate(
+  sampling_date = case_when(
+    sampling_date == as.Date("1948-04-26") ~ as.Date("2018-04-26"),
+    TRUE ~ as.Date(sampling_date)
+  )
+  ) %>%
+# collapse 2018-08-21 sample that spans two records
+group_by(sampling_date) %>%
+mutate(notes_cat = paste0(field_notes, collapse = "", sep = "; ")) %>%
+ungroup() %>%
+mutate(
+  field_notes = case_when(
+    sampling_date == as.Date("2018-08-21") ~ notes_cat,
+    TRUE ~ field_notes
+  )
+  ) %>%
+group_by(sampling_date) %>%
+summarise(field_notes = max(field_notes)) %>%
+ungroup()
+
+# count(sampling_date) %>% filter(n > 1)
+# 2018-08-21        2
+
+```
+
+# sampling time
+
+```{r sampling_time, eval=TRUE}
+
+sampling_date_time <- ttl_water_quality %>%
+  select(
+    sampling_date = `sampling date`,
+    sampling_time = `time of sampling`
+    ) %>%
+mutate(
+  sampling_date = as.Date(sampling_date),
+  sampling_time = as.POSIXct(sampling_time, format = "%Y-%m-%d %H:%M:%S"),
+  sampling_time = format(sampling_time, "%H:%M:%S")
+  ) %>%
+# fix erroneous date
+mutate(
+  sampling_date = case_when(
+    sampling_date == as.Date("1948-04-26") ~ as.Date("2018-04-26"),
+    TRUE ~ as.Date(sampling_date)
+  )
+  ) %>%
+filter(
+  !is.na(sampling_date),
+  !is.na(sampling_time)
+)
+
+```
+
+# ttl_meter_data
+
+```{r ttl-meter-data, eval=TRUE}
+
+ttl_meter_data <- ttl_water_quality %>%
+  select(
+    `sampling date`:`dissolved O2, mg/L`,
+    -`time of sampling`,
+    -`Alkalinity, mg/L`
+    ) %>%
+rename(
+  sampling_date = `sampling date`,
+  temperature = `Temp, degC`,
+  conductance = `Conductivity, microSiemens/cm`,
+  dissolved_oxygen = `dissolved O2, mg/L`
+  ) %>%
+mutate(
+  sampling_date = as.Date(sampling_date),
+  dissolved_oxygen = as.numeric(dissolved_oxygen)
+  ) %>%
+filter(!is.na(sampling_date)) %>%
+# fix erroneous date
+mutate(
+  sampling_date = case_when(
+    sampling_date == as.Date("1948-04-26") ~ as.Date("2018-04-26"),
+    TRUE ~ as.Date(sampling_date)
+  )
+  ) %>%
+# collapse 2018-08-21 sample that spans two records
+group_by(sampling_date) %>%
+summarise_all(max) %>%
+ungroup() %>%
+left_join(field_notes, by = "sampling_date") %>%
+left_join(sampling_date_time, by = "sampling_date") %>%
+select(
+  sampling_date,
+  sampling_time,
+  everything()
+  ) %>%
+bind_rows(
+  read_csv("data/630_ttl_meter_data_a8d5bff9348d1fba59a96af822289c46.csv") %>%
+    filter(sampling_date < "2017-07-29")
+) %>%
+arrange(sampling_date) %>%
+select(
+  sampling_date:dissolved_oxygen,
+  alkalinity:sediment_load,
+  field_notes,
+  everything()
+) %>%
+filter(!rowSums(is.na(.[, 3:10])) == 8)
+
+# write_attributes(ttl_meter_data)
+
+ttl_meter_data_desc <- "water-quality measurements collected with hand-held field meters and by titration in Tempe Town Lake, AZ as measured by the H. Hartnett Laboratory at Arizona State University "
+
+ttl_meter_data_DT <- create_dataTable(
+  dfname = ttl_meter_data,
+  description = ttl_meter_data_desc,
+  dateRangeField = "sampling_date"
+)
+
+```
+
+# ttl_carbon_nitrogen
+
+```{r ttl-carbon-nitrogen, eval=TRUE}
+
+ttl_carbon_nitrogen <- ttl_water_quality %>%
+  select(`DOC date`:`TN error`) %>%
+  rename(
+    sampling_date = `DOC date`,
+    DOC = `DOC, mg/L`,
+    DOC_error = `DOC error`,
+    TN = `TN, mg/L`,
+    TN_error = `TN error`
+    ) %>%
+  # fix erroneous date
+  mutate(
+    sampling_date = case_when(
+      sampling_date == as.Date("1948-04-26") ~ as.Date("2018-04-26"),
+      TRUE ~ as.Date(sampling_date)
+    )
+    ) %>%
+  filter(!is.na(sampling_date)) %>%
+  # add replicate field for duplicated value
+  mutate(replicate = as.integer(NA)) %>%
+  group_by(sampling_date) %>%
+  mutate(replicate = 1:length(sampling_date)) %>%
+  ungroup() %>%
+  left_join(field_notes, by = "sampling_date") %>%
+  left_join(sampling_date_time, by = "sampling_date") %>%
+  select(
+    sampling_date,
+    sampling_time,
+    everything()
+    ) %>%
+  bind_rows(
+    read_csv("data/630_ttl_carbon_nitrogen_19728b17c228953f8318200e8da8dc30.csv") %>%
+      filter(sampling_date < "2017-07-29")
+    ) %>%
+  # filter records without any data
+  filter(!is.na(DOC) | !is.na(TN)) %>%
+  mutate(across(where(is.numeric), ~ round(., digits = 2))) %>%
+  mutate(replicate = as.character(replicate)) %>%
+  arrange(sampling_date)
+
+# write_attributes(ttl_carbon_nitrogen)
+
+ttl_carbon_nitrogen_desc <- "long-term record of carbon and nitrogen concentrations in Tempe Town Lake, AZ as measured by the H. Hartnett Laboratory at Arizona State University"
+
+ttl_carbon_nitrogen_DT <- create_dataTable(
+  dfname = ttl_carbon_nitrogen,
+  description = ttl_carbon_nitrogen_desc,
+  dateRangeField = "sampling_date"
+)
+
+```
+
+
+# people
+
+See the gioseml package for examples of creating people resources from scratch.
+
+```{r people}
+
+# creator(s) - required
+
+hilairy <- create_role(
+  firstName = "hi",
+  lastName = "hartnett",
+  roleType = "creator")
+
+creators <- list(hilairy)
+
+# metadata provider - required
+
+hilairy <- create_role(
+  firstName = "hi",
+  lastName = "hartnett",
+  roleType = "metadata")
+
+metadataProvider <- list(hilairy)
+
+```
+
+# keywords
+
+```{r keywords}
+
+# CAP IRTs for reference (be sure to include these as appropriate):
+# https://sustainability.asu.edu/caplter/research/
+
+write_keywords()
+```
+
+# methods
+
+Methods are automatically read from a `methods.md` file in the project
+directory. 
+
+# coverages
+
+```{r coverages}
+
+start_end <- bind_rows(
+  ttl_carbon_nitrogen %>% select(sampling_date),
+  ttl_meter_data %>% select(sampling_date)
+  ) %>%
+summarise(
+  min = min(sampling_date),
+  max = max(sampling_date)
+)
+
+geographicDescription <- "CAP LTER study area"
+
+coverage <- set_coverage(
+  begin = as.character(start_end$min),
+  end = as.character(start_end$max),
+  geographicDescription = geographicDescription,
+  west = -111.949, east = -111.910,
+  north = +33.437, south = +33.430)
+
+```
+
+# dataset
+
+Optionally, provide: scope, abstract, methods, keywords, publication date.
+Projects scopes include lter (default), urex, ltreb, and som.
+
+```{r construct-dataset}
+
+dataset <- create_dataset()
+```
+
+# add dataTable
+
+```{r dataSet$dataTable}
+
+# add dataTables if relevant
+
+print(ls(pattern = "_DT"))
+
+if (length(ls(pattern = "_DT")) > 0) {
+
+  listOfDataTables <- lapply(ls(pattern = "_DT"), function(DT) { get(DT) } )
+
+  dataset$dataTable  <- listOfDataTables
+
+}
+
+# or add manually
+# dataset$dataTable <- list(dataTableOne, dataTableTwo)
+
+```
+
+# customUnits
+
+```{r custom-units, eval=FALSE}
+
+custom_units <- rbind(
+  data.frame(id = "microsiemenPerCentimeter",
+             unitType = "conductance",
+             parentSI = "siemen",
+             multiplierToSI = 0.000001,
+             description = "electric conductance of lake water in the units of microsiemenPerCentimeter"),
+data.frame(id = "nephelometricTurbidityUnit",
+           unitType = "unknown",
+           parentSI = "unknown",
+           multiplierToSI = 1,
+           description = "(NTU) ratio of the amount of light transmitted straight through a water sample with the amount scattered at an angle of 90 degrees to one side"))
+
+unitList <- set_unitList(
+  custom_units,
+  as_metadata = TRUE)
+
+```
+
+# eml
+
+```{r construct_eml, eval=TRUE}
+
+eml <- create_eml()
+```
+
+```{r validate_eml, eval=TRUE}
+
+EML::eml_validate(eml)
+```
+
+```{r eml_to_file, eval=TRUE}
+
+# write the eml to file
+write_cap_eml()
+```
+
+# file placement
+
+```{r package-details, eval=TRUE}
+
+# retrieve package details from config.yaml
+if (!file.exists("config.yaml")) {
+  stop("config.yaml not found")
+}
+packageIdent <- yaml::yaml.load_file("config.yaml")$packageIdent
+packageNum <- yaml::yaml.load_file("config.yaml")$packageNum
+```
+
+```{r preview_data_file_to_upload}
+
+# preview data set files that will be uploaded to S3
+list.files(pattern = paste0(packageNum, "_"))
+```
+
+Move data and final xml files to respective ASU locations.
+
+```{r S3_helper_functions}
+# functions and setting for uploading to S3
+library(aws.s3)
+source("~/Documents/localSettings/aws.s3")
+```
+
+```{r upload_data_S3}
+
+# upload files to S3
+lapply(list.files(pattern = paste0(packageNum, "_")), data_to_amz)
+```
+
+```{r clean_up}
+
+# remove data files
+dataFilesToRemove <- dir(pattern = paste0(packageNum, "_"))
+file.remove(dataFilesToRemove)
+
+# EML to S3
+eml_to_amz(paste0(packageIdent, ".xml"))
+
+# EML to cap-data-eml and remove file from project
+file.copy(paste0(packageIdent, ".xml"), "/home/srearl/localRepos/cap-metadata/cap-data-eml/")
+file.remove(paste0(packageIdent, ".xml"))
