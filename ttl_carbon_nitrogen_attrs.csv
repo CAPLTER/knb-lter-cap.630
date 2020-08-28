@@ -1,7 +1,9 @@
-attributeName,formatString,unit,numberType,definition,attributeDefinition,columnClasses,minimum,maximum,missingValueCode,missingValueCodeExplanation
-sampling_date,YYYY-MM-DD,,,,date of data collection,Date,,,,
-DOC,,milligramsPerLiter,real,,dissolved organic carbon (DOC) concentration,numeric,0.2161,20.2949169426,NA,missing value
-DOC_error,,milligramsPerLiter,real,,DOC error calculated as standard deviation of replicate samples,numeric,-0.1388,0.4696,NA,missing value
-TN,,milligramsPerLiter,real,,total dissolved nitrogen (TDN) concentration,numeric,0.0926284024,1.6385075841,NA,missing value
-TN_error,,milligramsPerLiter,real,,TDN error calculated as standard deviation of replicate samples,numeric,0.0007289051,0.2959024498,NA,missing value
-field_notes,,,,comments by field investigator regarding sample collection or processing,comments by field investigator regarding sample collection or processing,character,,,NA,missing value
+"attributeName","formatString","unit","numberType","definition","attributeDefinition","columnClasses","minimum","maximum"
+"sampling_date",YYYY-MM-DD,"","","",date of data collection,"Date","",""
+"sampling_time",hh:mm:ss,"","","",time of data collection,"Date","",""
+"DOC","",milligramsPerLiter,"real","",dissolved organic carbon (DOC) concentration,"numeric","0.220000","20.290000"
+"DOC_error","",milligramsPerLiter,"real","",DOC error calculated as standard deviation of replicate samples,"numeric","-0.140000","0.470000"
+"TN","",milligramsPerLiter,"real","",total dissolved nitrogen (TDN) concentration,"numeric","0.090000","1.640000"
+"TN_error","",milligramsPerLiter,"real","",TDN error calculated as standard deviation of replicate samples,"numeric","0.000000","0.300000"
+"replicate","","",,sample replicate number if multiple measurements were made,sample replicate number if multiple measurements were made,"character","",""
+"field_notes","","","",comments by field investigator regarding sample collection or processing,comments by field investigator regarding sample collection or processing,"character","",""

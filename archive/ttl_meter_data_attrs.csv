@@ -1,0 +1,11 @@
+attributeName,formatString,unit,numberType,definition,attributeDefinition,columnClasses,minimum,maximum,missingValueCode,missingValueCodeExplanation
+sampling_date,YYYY-MM-DD,,,,date of data collection,Date,,,,
+temperature,,celsius,real,,temperature of the lake measured in degrees Celsius by hand held meter in the field,numeric,9.5,37.8,NA,missing value
+pH,,dimensionless,real,,pH of the lake measured by hand held meter in the field,numeric,0.98,10.54,NA,missing value
+conductance,,microsiemenPerCentimeter,real,,conductivity of the lake in microSiemens/cm measured by hand held meter in the field,numeric,180.4,1891,NA,missing value
+alkalinity,,milligramsPerLiter,real,,ability to neutralize an acid in mg/L as CaCO3,numeric,21.7,191,NA,missing value
+bicarbonate,,milligramsPerLiter,real,,the first end point for the alkalinity titration in mg/L as CaCO3,numeric,0.7869,2.8852,NA,missing value
+turbidity,,nephelometricTurbidityUnit,real,,lack of clarity of the lake water,numeric,3.62,382,NA,missing value
+sediment_load,,gramsPerLiter,real,,amount of sediment retained on filter after a known volume is filtered,numeric,0.00053397,0.3541,NA,missing value
+dissolved_oxygen,,milligramsPerLiter,real,,dissolved oxygen of the lake measured by hand held meter in the field,numeric,0.65,21.3893,NA,missing value
+field_notes,,,,comments by field investigator regarding sample collection or processing,comments by field investigator regarding sample collection or processing,character,,,NA,missing value
