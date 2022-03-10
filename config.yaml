@@ -1,3 +1,8 @@
 packageNum: 630
-packageIdent: knb-lter-cap.630.2
-title: "Water-quality monitoring in Tempe Town Lake, Tempe, AZ, ongoing since 2005"
+packageIdent: knb-lter-cap.630.3
+title: 'Water-quality monitoring in Tempe Town Lake, Tempe, Arizona, USA, ongoing since 2005'
+baseURL: https://data.gios.asu.edu/datasets/cap/
+project: lter
+maintenance: regular
+geographicCoverage:
+  geographicDescription: 'CAP LTER study area: greater Phoenix, Arizona (USA) metropolitan area and surrounding Sonoran desert region'

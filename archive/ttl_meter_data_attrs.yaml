@@ -1,0 +1,80 @@
+|
+  sampling_date:
+    attributeName: sampling_date
+    attributeDefinition: ''
+    columnClasses: Date
+    formatString: YYYY-MM-DD
+  sampling_time:
+    attributeName: sampling_time
+    attributeDefinition: ''
+    columnClasses: character
+    definition: ''
+  temperature:
+    attributeName: temperature
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 9.5
+    maximum: 37.8
+    columnClasses: numeric
+  pH:
+    attributeName: pH
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 0.98
+    maximum: 10.54
+    columnClasses: numeric
+  conductance:
+    attributeName: conductance
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 180.4
+    maximum: 1891.0
+    columnClasses: numeric
+  dissolved_oxygen:
+    attributeName: dissolved_oxygen
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 0.65
+    maximum: 1045.0
+    columnClasses: numeric
+  alkalinity:
+    attributeName: alkalinity
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 21.7
+    maximum: 191.0
+    columnClasses: numeric
+  bicarbonate:
+    attributeName: bicarbonate
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 0.7869
+    maximum: 2.8852
+    columnClasses: numeric
+  turbidity:
+    attributeName: turbidity
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 3.62
+    maximum: 382.0
+    columnClasses: numeric
+  sediment_load:
+    attributeName: sediment_load
+    attributeDefinition: ''
+    unit: ''
+    numberType: real
+    minimum: 0.000534
+    maximum: 0.3541
+    columnClasses: numeric
+  field_notes:
+    attributeName: field_notes
+    attributeDefinition: ''
+    columnClasses: character
+    definition: ''
