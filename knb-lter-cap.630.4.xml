@@ -1,0 +1,729 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eml:eml xmlns:eml="https://eml.ecoinformatics.org/eml-2.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:stmml="http://www.xml-cml.org/schema/stmml-1.2" packageId="knb-lter-cap.630.4" scope="system" system="knb" xsi:schemaLocation="https://eml.ecoinformatics.org/eml-2.2.0 https://eml.ecoinformatics.org/eml-2.2.0/eml.xsd">
+  <access authSystem="knb" order="allowFirst" scope="document">
+    <allow>
+      <principal>uid=CAP,o=EDI,dc=edirepository,dc=org</principal>
+      <permission>all</permission>
+    </allow>
+    <allow>
+      <principal>public</principal>
+      <permission>read</permission>
+    </allow>
+  </access>
+  <dataset>
+    <title>Water-quality monitoring in Tempe Town Lake, Tempe, Arizona, USA (2005-2021)</title>
+    <creator>
+      <individualName>
+        <givenName>Hilairy</givenName>
+        <surName>Hartnett</surName>
+      </individualName>
+      <organizationName>Arizona State University</organizationName>
+      <electronicMailAddress>H.Hartnett@asu.edu</electronicMailAddress>
+      <userId directory="https://orcid.org">0000-0003-0736-7844</userId>
+    </creator>
+    <metadataProvider>
+      <individualName>
+        <givenName>Hilairy</givenName>
+        <surName>Hartnett</surName>
+      </individualName>
+      <organizationName>Arizona State University</organizationName>
+      <electronicMailAddress>H.Hartnett@asu.edu</electronicMailAddress>
+      <userId directory="https://orcid.org">0000-0003-0736-7844</userId>
+    </metadataProvider>
+    <pubDate>2023-10-16</pubDate>
+    <language>english</language>
+    <abstract>
+      <markdown>
+Constructed in 1997, the Tempe Town Lake is a small man-made reservoir that transforms a section of the typically-dry Salt River bed into a 224-acre lake in the heart of Tempe, Arizona. To accommodate the river when it flows, the lake features hydraulically-operated steel gates that allow water to pass through the system unimpeded. The lake has been a remarkable success as a community amenity and as a driver of economic growth in the area around the lake. The lake provides an ideal model system for the many artificial lakes constructed in arid-land cities owing to management decisions, such as draining, that affect their operation and ecology. At the same time, dramatic shifts in hydrology and chemistry when the lake is transformed to a flowing river and back into a lake during and after floods, provide opportunities to study the system's dynamic evolution to new limnological steady states. 
+
+The CAP LTER has been measuring water quality, including temperature, pH, conductivity, and dissolved oxygen, dissolved organic carbon (DOC), and total dissolved nitrogen (TDN), in the lake since 2005.
+</markdown>
+    </abstract>
+    <keywordSet>
+      <keyword keywordType="theme">urban</keyword>
+      <keyword keywordType="theme">long term</keyword>
+      <keyword keywordType="theme">long term monitoring</keyword>
+      <keyword keywordType="theme">dissolved organic carbon</keyword>
+      <keyword keywordType="theme">dissolved oxygen</keyword>
+      <keyword keywordType="theme">conductivity</keyword>
+      <keyword keywordType="theme">water quality</keyword>
+      <keyword keywordType="theme">water temperature</keyword>
+      <keyword keywordType="theme">lakes</keyword>
+      <keyword keywordType="theme">carbon</keyword>
+      <keyword keywordType="theme">alkalinity</keyword>
+      <keyword keywordType="theme">bicarbonate</keyword>
+      <keyword keywordType="theme">turbidity</keyword>
+      <keyword keywordType="theme">sediments</keyword>
+      <keyword keywordType="theme">ph</keyword>
+      <keyword keywordType="theme">total dissolved nitrogen</keyword>
+      <keywordThesaurus>LTER controlled vocabulary</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword keywordType="theme">movement of organic matter</keyword>
+      <keyword keywordType="theme">movement of inorganic matter</keyword>
+      <keyword keywordType="theme">water and fluxes</keyword>
+      <keyword keywordType="theme">parks and rivers</keyword>
+      <keywordThesaurus>LTER core areas</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword keywordType="theme">time-series</keyword>
+      <keywordThesaurus>Creator Defined Keyword Set</keywordThesaurus>
+    </keywordSet>
+    <keywordSet>
+      <keyword keywordType="theme">cap lter</keyword>
+      <keyword keywordType="theme">cap</keyword>
+      <keyword keywordType="theme">caplter</keyword>
+      <keyword keywordType="theme">central arizona phoenix long term ecological research</keyword>
+      <keyword keywordType="place">arizona</keyword>
+      <keyword keywordType="place">az</keyword>
+      <keyword keywordType="place">tempe</keyword>
+      <keyword keywordType="theme">arid land</keyword>
+      <keywordThesaurus>CAPLTER Keyword Set List</keywordThesaurus>
+    </keywordSet>
+    <intellectualRights>This data package is released to the "public domain" under Creative Commons CC0 1.0 "No Rights Reserved" (see: https://creativecommons.org/publicdomain/zero/1.0/). The consumer of these data ("Data User" herein) has an ethical obligation to cite it appropriately in any publication that results from its use. The Data User should realize that these data may be actively used by others for ongoing research and that coordination may be necessary to prevent duplicate publication. The Data User is urged to contact the authors of these data if any questions about methodology or results occur. Where appropriate, the Data User is encouraged to consider collaboration or coauthorship with the authors. The Data User should realize that misinterpretation of data may occur if used out of context of the original study. While substantial efforts are made to ensure the accuracy of data and associated documentation, complete accuracy of data sets cannot be guaranteed. All data are made available "as is". The Data User should be aware, however, that data are updated periodically and it is the responsibility of the Data User to check for new versions of the data. The data authors and the repository where these data were obtained shall not be liable for damages resulting from any use or misinterpretation of the data. Thank you.</intellectualRights>
+    <distribution>
+      <online>
+        <onlineDescription>CAP LTER Metadata URL</onlineDescription>
+        <url>https://gios-data.s3.us-west-2.amazonaws.com/metadata/knb-lter-cap.630.4.xml</url>
+      </online>
+    </distribution>
+    <coverage>
+      <geographicCoverage>
+        <geographicDescription>Tempe Town Lake in Tempe, Arizona, USA, part of the CAP LTER study area including the greater Phoenix, Arizona (USA) metropolitan area and surrounding Sonoran desert region</geographicDescription>
+        <boundingCoordinates>
+          <westBoundingCoordinate>-111.949</westBoundingCoordinate>
+          <eastBoundingCoordinate>-111.91</eastBoundingCoordinate>
+          <northBoundingCoordinate>33.437</northBoundingCoordinate>
+          <southBoundingCoordinate>33.43</southBoundingCoordinate>
+        </boundingCoordinates>
+      </geographicCoverage>
+      <temporalCoverage>
+        <rangeOfDates>
+          <beginDate>
+            <calendarDate>2005-01-05</calendarDate>
+          </beginDate>
+          <endDate>
+            <calendarDate>2021-11-24</calendarDate>
+          </endDate>
+        </rangeOfDates>
+      </temporalCoverage>
+    </coverage>
+    <maintenance>
+      <description>complete</description>
+      <maintenanceUpdateFrequency>asNeeded</maintenanceUpdateFrequency>
+    </maintenance>
+    <contact>
+      <organizationName>Central Arizona–Phoenix LTER</organizationName>
+      <positionName>Information Manager</positionName>
+      <address>
+        <deliveryPoint>Arizona State University</deliveryPoint>
+        <deliveryPoint>Global Institute of Sustainability and Innovation</deliveryPoint>
+        <city>Tempe</city>
+        <administrativeArea>AZ</administrativeArea>
+        <postalCode>85287-5402</postalCode>
+        <country>USA</country>
+      </address>
+      <electronicMailAddress>caplter.data@asu.edu</electronicMailAddress>
+      <onlineUrl>https://sustainability-innovation.asu.edu/caplter/</onlineUrl>
+    </contact>
+    <publisher>
+      <organizationName>Central Arizona–Phoenix LTER</organizationName>
+      <address>
+        <deliveryPoint>Arizona State University</deliveryPoint>
+        <deliveryPoint>Global Institute of Sustainability and Innovation</deliveryPoint>
+        <city>Tempe</city>
+        <administrativeArea>AZ</administrativeArea>
+        <postalCode>85287-5402</postalCode>
+        <country>USA</country>
+      </address>
+    </publisher>
+    <methods>
+      <methodStep>
+        <description>
+          <markdown>
+## overview
+
+Water sampling from the south side of Tempe Town Lake at a depth of ~ 1 meter.  We make *in situ* measurements of water quality parameters (pH, Temp, O&lt;sub&gt;2&lt;/sub&gt;, Conductivity) and collect samples for analysis of dissolved organic carbon/total nitrogen in the laboratory.
+
+## pH 
+
+Measured in the field with hand-held YSI or Thermo-Orion sensors. Sensors are calibrated each day with a 3-point calibration curve (pH = 4, 7, 10).
+
+## conductivity
+
+Measured in the field with a handheld Orion conductivity sensor. Sensor is calibrated each day with a one-point, 1000 microSieman conductivity solution. Values in microSiemans (temperature compensated).
+
+## dissolved oxygen
+
+Measured in the field with a hand-held YSI sensor. Sensor is altitude compensated and calibrated relative to an air saturated water solution each day. Values in mg O&lt;sub&gt;2&lt;/sub&gt;/L.
+
+## temperature
+
+Measured by each of the above sensors. Values in degrees Celsius.
+
+## water collection and filtration
+
+Water samples are collected into 1L Nalgene bottles that are rinsed 3x with lake water before collection. Samples are collected below the surface and an effort is made to exclude floating debris. Samples are immediately transported to the lab for filtration.
+Samples are filtered through GF/F filters on a vacuum manifold. Samples are collected in an ashed (450&amp;deg;C) flask and distributed in to centrifuge tubes for storage until analysis.
+
+## sample storage
+
+Polypropylene centrifuge tubes (VWR) are rinsed with deionized water and leached for 48 hours prior to use. Filtered samples for dissolved organic carbon analysis are acidified to pH&lt;2 with HCl and stored in the dark at 4 deg C until analysis. Every effort is made to analyze samples within 1 month of collection.
+
+## dissolved organic carbon/total nitrogen analysis
+
+Dissolved organic carbon concentration was measured using a Shimadzu TOC-V carbon analyzer where samples are combusted at 680&amp;deg;C in an oxygen-rich environment with a platinized-alumina catalyst to convert all carbon in the sample to carbon dioxide gas. Dissolved organic carbon is detected as CO&lt;sub&gt;2&lt;/sub&gt;(g) by a non-dispersive infra-red gas analyzer. Total nitrogen is detected from the same analysis as NO using a chemiluminescence nitrogen detector. The instrument is calibrated daily with a 5-point calibration curve for carbon and nitrogen, and quality check standards are evaluated with each run.
+
+## alkalinity and bicarbonate
+
+Determined by Gran titration with hydrochloric acid.
+
+## turbidity
+
+Measured with a Hach turbidity meter in normalized turbidity units
+
+## suspended sediment
+
+Determined by mass. One liter of water was filtered onto GF/F filter (25 mm); filter was dried at 60 deg C and weighed to determine mass of sediment.
+</markdown>
+        </description>
+      </methodStep>
+    </methods>
+    <project>
+      <title>Central Arizona–Phoenix Long-Term Ecological Research Project</title>
+      <personnel>
+        <individualName>
+          <givenName>Daniel</givenName>
+          <surName>Childers</surName>
+        </individualName>
+        <organizationName>Arizona State University</organizationName>
+        <electronicMailAddress>dan.childers@asu.edu</electronicMailAddress>
+        <userId directory="https://orcid.org">0000-0003-3904-0803</userId>
+        <role>Principal Investigator</role>
+      </personnel>
+      <personnel>
+        <individualName>
+          <givenName>Nancy</givenName>
+          <surName>Grimm</surName>
+        </individualName>
+        <organizationName>Arizona State University</organizationName>
+        <electronicMailAddress>nbgrimm@asu.edu</electronicMailAddress>
+        <userId directory="https://orcid.org">0000-0001-9374-660X</userId>
+        <role>Co-principal Investigator</role>
+      </personnel>
+      <personnel>
+        <individualName>
+          <givenName>Sharon</givenName>
+          <surName>Hall</surName>
+        </individualName>
+        <organizationName>Arizona State University</organizationName>
+        <electronicMailAddress>sharonjhall@asu.edu</electronicMailAddress>
+        <userId directory="https://orcid.org">0000-0002-8859-6691</userId>
+        <role>Co-principal Investigator</role>
+      </personnel>
+      <personnel>
+        <individualName>
+          <givenName>Billie</givenName>
+          <surName>Turner II</surName>
+        </individualName>
+        <organizationName>Arizona State University</organizationName>
+        <electronicMailAddress>Billie.L.Turner@asu.edu</electronicMailAddress>
+        <userId directory="https://orcid.org">0000-0002-6507-521X</userId>
+        <role>Co-principal Investigator</role>
+      </personnel>
+      <personnel>
+        <individualName>
+          <givenName>Abigail</givenName>
+          <surName>York</surName>
+        </individualName>
+        <organizationName>Arizona State University</organizationName>
+        <electronicMailAddress>Abigail.York@asu.edu</electronicMailAddress>
+        <userId directory="https://orcid.org">0000-0002-2313-9262</userId>
+        <role>Co-principal Investigator</role>
+      </personnel>
+      <abstract>Phase IV of the Central Arizona-Phoenix LTER (CAP) continues to focus on the question: How do the ecosystem services provided by urban ecological infrastructure (UEI) affect human outcomes and behavior, and how do human actions affect patterns of urban ecosystem structure and function and, ultimately, urban sustainability and resilience? The overarching goal is to foster social-ecological urban research aimed at understanding these complex systems using a holistic, ecology of cities perspective while contributing to an ecology for cities that enhances urban sustainability and resilience. This goal is being met through four broad programmatic objectives: (1) use long-term observations and datasets to articulate and answer new questions requiring a long-term perspective; (2) develop and use predictive models and future-looking scenarios to help answer research questions; (3) employ existing urban ecological theory while articulating new theory; and (4) build transdisciplinary partnerships to foster resilience and enhance sustainability in urban ecosystems while educating urban dwellers of all ages and experiences. CAP IV research is organized around eight interdisciplinary questions and ten long-term datasets and experiments, and researchers are organized into eight Interdisciplinary Research Themes to pursue these long-term research questions.</abstract>
+      <funding>NSF Awards: CAP I: DEB-9714833, CAP II: DEB-0423704, CAP III: DEB-1026865, CAP IV: DEB-1832016</funding>
+      <award>
+        <funderName>National Science Foundation</funderName>
+        <funderIdentifier>https://ror.org/021nxhr62</funderIdentifier>
+        <awardNumber>1832016</awardNumber>
+        <title>LTER: CAP IV - Investigating urban ecology and sustainability through the lens of Urban Ecological Infrastructure</title>
+        <awardUrl>https://nsf.gov/awardsearch/showAward?AWD_ID=1832016&amp;HistoricalAwards=false</awardUrl>
+      </award>
+    </project>
+    <dataTable id="630_ttl_carbon_nitrogen.csv">
+      <entityName>630_ttl_carbon_nitrogen.csv</entityName>
+      <entityDescription>long-term record of carbon and nitrogen concentrations in Tempe Town Lake, Arizona, USA as measured by the H. Hartnett Laboratory at Arizona State University</entityDescription>
+      <physical>
+        <objectName>630_ttl_carbon_nitrogen.csv</objectName>
+        <size unit="bytes">76848</size>
+        <authentication method="MD5">9b02b5abddebf428bd884273081edece</authentication>
+        <dataFormat>
+          <textFormat>
+            <numHeaderLines>1</numHeaderLines>
+            <recordDelimiter>\r\n</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+              <quoteCharacter>"</quoteCharacter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+        <distribution>
+          <online>
+            <url function="download">https://data.gios.asu.edu/datasets/cap/630_ttl_carbon_nitrogen.csv</url>
+          </online>
+        </distribution>
+      </physical>
+      <coverage>
+        <temporalCoverage>
+          <rangeOfDates>
+            <beginDate>
+              <calendarDate>2005-01-05</calendarDate>
+            </beginDate>
+            <endDate>
+              <calendarDate>2021-05-07</calendarDate>
+            </endDate>
+          </rangeOfDates>
+        </temporalCoverage>
+      </coverage>
+      <attributeList>
+        <attribute>
+          <attributeName>sampling_date</attributeName>
+          <attributeDefinition>date of data collection</attributeDefinition>
+          <storageType>date</storageType>
+          <measurementScale>
+            <dateTime>
+              <formatString>YYYY-MM-DD</formatString>
+              <dateTimeDomain/>
+            </dateTime>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>sampling_time</attributeName>
+          <attributeDefinition>time of data collection</attributeDefinition>
+          <storageType>date</storageType>
+          <measurementScale>
+            <dateTime>
+              <formatString>hh:mm:ss</formatString>
+              <dateTimeDomain/>
+            </dateTime>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>DOC</attributeName>
+          <attributeDefinition>dissolved organic carbon (DOC) concentration</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>milligramsPerLiter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0.22</minimum>
+                  <maximum exclusive="false">20.29</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>DOC_error</attributeName>
+          <attributeDefinition>DOC error calculated as standard deviation of replicate samples</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>milligramsPerLiter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">-0.14</minimum>
+                  <maximum exclusive="false">0.47</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>TN</attributeName>
+          <attributeDefinition>total dissolved nitrogen (TDN) concentration</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>milligramsPerLiter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0.09</minimum>
+                  <maximum exclusive="false">1.64</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>TN_error</attributeName>
+          <attributeDefinition>TDN error calculated as standard deviation of replicate samples</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>milligramsPerLiter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0</minimum>
+                  <maximum exclusive="false">0.3</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>replicate</attributeName>
+          <attributeDefinition>sample replicate number if multiple measurements were made</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>sample replicate number if multiple measurements were made</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>field_notes</attributeName>
+          <attributeDefinition>comments by field investigator regarding sample collection or processing</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>comments by field investigator regarding sample collection or processing</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+      </attributeList>
+      <numberOfRecords>1223</numberOfRecords>
+    </dataTable>
+    <dataTable id="630_ttl_meter_data.csv">
+      <entityName>630_ttl_meter_data.csv</entityName>
+      <entityDescription>water-quality measurements collected with hand-held field meters and by titration in Tempe Town Lake, Arizona, USA as measured by the H. Hartnett Laboratory at Arizona State University </entityDescription>
+      <physical>
+        <objectName>630_ttl_meter_data.csv</objectName>
+        <size unit="bytes">97042</size>
+        <authentication method="MD5">8ad044d46a72008159841d07c599f85a</authentication>
+        <dataFormat>
+          <textFormat>
+            <numHeaderLines>1</numHeaderLines>
+            <recordDelimiter>\r\n</recordDelimiter>
+            <attributeOrientation>column</attributeOrientation>
+            <simpleDelimited>
+              <fieldDelimiter>,</fieldDelimiter>
+              <quoteCharacter>"</quoteCharacter>
+            </simpleDelimited>
+          </textFormat>
+        </dataFormat>
+        <distribution>
+          <online>
+            <url function="download">https://data.gios.asu.edu/datasets/cap/630_ttl_meter_data.csv</url>
+          </online>
+        </distribution>
+      </physical>
+      <coverage>
+        <temporalCoverage>
+          <rangeOfDates>
+            <beginDate>
+              <calendarDate>2005-01-05</calendarDate>
+            </beginDate>
+            <endDate>
+              <calendarDate>2021-11-24</calendarDate>
+            </endDate>
+          </rangeOfDates>
+        </temporalCoverage>
+      </coverage>
+      <attributeList>
+        <attribute>
+          <attributeName>sampling_date</attributeName>
+          <attributeDefinition>date of data collection</attributeDefinition>
+          <storageType>date</storageType>
+          <measurementScale>
+            <dateTime>
+              <formatString>YYYY-MM-DD</formatString>
+              <dateTimeDomain/>
+            </dateTime>
+          </measurementScale>
+        </attribute>
+        <attribute>
+          <attributeName>sampling_time</attributeName>
+          <attributeDefinition>time of data collection</attributeDefinition>
+          <storageType>date</storageType>
+          <measurementScale>
+            <dateTime>
+              <formatString>hh:mm:ss</formatString>
+              <dateTimeDomain/>
+            </dateTime>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>temperature</attributeName>
+          <attributeDefinition>temperature of the lake measured in degrees Celsius by hand held meter in the field</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>celsius</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">9.5</minimum>
+                  <maximum exclusive="false">37.8</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>pH</attributeName>
+          <attributeDefinition>pH of the lake measured by hand held meter in the field</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>dimensionless</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0.98</minimum>
+                  <maximum exclusive="false">10.54</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>conductance</attributeName>
+          <attributeDefinition>conductivity of the lake in microSiemens/cm measured by hand held meter in the field</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>microsiemenPerCentimeter</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">180.4</minimum>
+                  <maximum exclusive="false">1891</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>dissolved_oxygen</attributeName>
+          <attributeDefinition>dissolved oxygen of the lake measured by hand held meter in the field</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>milligramsPerLiter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0.65</minimum>
+                  <maximum exclusive="false">1045</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>alkalinity</attributeName>
+          <attributeDefinition>ability to neutralize an acid in mg/L as CaCO3</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>milligramsPerLiter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">21.7</minimum>
+                  <maximum exclusive="false">191</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>bicarbonate</attributeName>
+          <attributeDefinition>the first end point for the alkalinity titration in mg/L as CaCO3</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>milligramsPerLiter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0.7869</minimum>
+                  <maximum exclusive="false">2.8852</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>turbidity</attributeName>
+          <attributeDefinition>lack of clarity of the lake water</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <customUnit>nephelometricTurbidityUnit</customUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">3.62</minimum>
+                  <maximum exclusive="false">382</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>sediment_load</attributeName>
+          <attributeDefinition>amount of sediment retained on filter after a known volume is filtered</attributeDefinition>
+          <storageType>float</storageType>
+          <measurementScale>
+            <ratio>
+              <unit>
+                <standardUnit>gramsPerLiter</standardUnit>
+              </unit>
+              <numericDomain>
+                <numberType>real</numberType>
+                <bounds>
+                  <minimum exclusive="false">0.000534</minimum>
+                  <maximum exclusive="false">0.3541</maximum>
+                </bounds>
+              </numericDomain>
+            </ratio>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+        <attribute>
+          <attributeName>field_notes</attributeName>
+          <attributeDefinition>comments by field investigator regarding sample collection or processing</attributeDefinition>
+          <storageType>string</storageType>
+          <measurementScale>
+            <nominal>
+              <nonNumericDomain>
+                <textDomain>
+                  <definition>comments by field investigator regarding sample collection or processing</definition>
+                </textDomain>
+              </nonNumericDomain>
+            </nominal>
+          </measurementScale>
+          <missingValueCode>
+            <code>NA</code>
+            <codeExplanation>missing value</codeExplanation>
+          </missingValueCode>
+        </attribute>
+      </attributeList>
+      <numberOfRecords>1259</numberOfRecords>
+    </dataTable>
+  </dataset>
+  <additionalMetadata>
+    <metadata>
+      <unitList>
+        <unit id="microsiemenPerCentimeter" multiplierToSI="0.000001" name="microsiemenPerCentimeter" parentSI="siemen" unitType="conductance">
+          <description>electric conductance of lake water in the units of microsiemenPerCentimeter</description>
+        </unit>
+        <unit id="nephelometricTurbidityUnit" multiplierToSI="1" name="nephelometricTurbidityUnit" parentSI="unknown" unitType="unknown">
+          <description>(NTU) ratio of the amount of light transmitted straight through a water sample with the amount scattered at an angle of 90 degrees to one side</description>
+        </unit>
+      </unitList>
+    </metadata>
+  </additionalMetadata>
+</eml:eml>
